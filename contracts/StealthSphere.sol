@@ -29,4 +29,26 @@ contract StealthSphere {
         messages[msg.sender][receiver].push(messageSender);
         messages[receiver][msg.sender].push(messageReceiver);
     }
+
+    function getContacts(address user) public view returns (address[] memory) {
+        return contacts[user];
+    }
+
+    function getCid(address user) public view returns (string memory) {
+        return addressToCid[user];
+    }
+
+    function getMessages(
+        address user0,
+        address user1
+    ) public view returns (string[] memory) {
+        return messages[user0][user1];
+    }
+
+    function getMessagesLength(
+        address user0,
+        address user1
+    ) public view returns (uint256) {
+        return messages[user0][user1].length;
+    }
 }
