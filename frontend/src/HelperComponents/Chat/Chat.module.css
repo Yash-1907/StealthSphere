@@ -1,0 +1,39 @@
+.me{
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: auto;
+    height: auto;
+    text-align: right;
+    float: right;
+    clear: both;
+    padding: 0.5% 2%;
+    color: black;
+
+}
+
+.meContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 100px;
+    margin-top: 30px;
+}
+
+.otherContainer{
+    display: flex;
+    padding: 0 100px;
+}
+
+.other{
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: auto;
+    text-align: left;
+    float: left;
+    clear: both;
+    padding: 0.5% 2%;
+    color: black;
+}

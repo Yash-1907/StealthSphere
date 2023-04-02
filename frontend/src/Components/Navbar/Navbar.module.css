@@ -1,0 +1,39 @@
+.container{
+    background: #1f2122;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    color: #fff;
+    border-bottom: #fff 0.1px solid;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 3%;
+}
+
+.navItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+

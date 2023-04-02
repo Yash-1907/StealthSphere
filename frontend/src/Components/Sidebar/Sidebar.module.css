@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background: #1f2122;
+    width: 22vw;
+    height: 89.8vh;
+    border-right: #fff 0.1px solid;
+    justify-content: top;
+    align-items: center;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+}
