@@ -1,13 +1,10 @@
-# Sample Hardhat Project
+# Stealth Sphere
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+End-to-End Encrypted On-chain Messaging
 
-Try running some of the following tasks:
+To run the project: 
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npm i
+npm start
 ```
