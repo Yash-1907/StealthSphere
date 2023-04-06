@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import style from "./Navbar.module.css";
 import { HiUserCircle } from "react-icons/hi";
@@ -7,11 +7,20 @@ import logo from "./assets/logo.png";
 import Chatbox from "../Chatbox/Chatbox";
 import MyButton from "../../HelperComponents/Button/Button";
 import { ethers } from "ethers";
+import { Button, Modal } from "antd";
 import { Outlet } from "react-router-dom";
 
 const Navbar = () => {
-  const auth = false;
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const {
     enableWeb3,
     isWeb3Enabled,
@@ -61,30 +70,41 @@ const Navbar = () => {
         </div>
         <div className={style.navItems}>
           <div className={style.user}>
-          {account ? (
-          <div>
-            Connected to {account.slice(0, 6)}...
-            {account.slice(account.length - 4)}
-          </div>
-        ) : (
-          <MyButton
-            text={"Connect Wallet"}
-            onClick={async () => {
-              // await walletModal.connect()
-              const ret = await enableWeb3();
-              if (typeof ret !== "undefined") {
-                // depends on what button they picked
-                if (typeof window !== "undefined") {
-                  window.localStorage.setItem("connected", "injected");
-                  // window.localStorage.setItem("connected", "walletconnect")
-                }
-              }
-            }}
-            disabled={isWeb3EnableLoading}
-          >
-            Connect Wallet
-          </MyButton>
-        )}
+            {account ? (
+              <div>
+                Connected to {account.slice(0, 6)}...
+                {account.slice(account.length - 4)}
+              </div>
+            ) : (
+              <MyButton
+                text={"Connect Wallet"}
+                onClick={async () => {
+                  // await walletModal.connect()
+                  const ret = await enableWeb3();
+                  if (typeof ret !== "undefined") {
+                    // depends on what button they picked
+                    if (typeof window !== "undefined") {
+                      window.localStorage.setItem("connected", "injected");
+                      // window.localStorage.setItem("connected", "walletconnect")
+                    }
+                  }
+
+                }}
+                disabled={isWeb3EnableLoading}
+              >
+                Connect Wallet
+                <Modal
+                  title="Basic Modal"
+                  open={isModalOpen}
+                  onOk={handleOk}
+                  onCancel={handleCancel}
+                >
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                </Modal>
+              </MyButton>
+            )}
           </div>
         </div>
       </div>

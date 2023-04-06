@@ -19,8 +19,6 @@ contract StealthSphere {
         contacts[contact].push(msg.sender);
     }
 
-    function changeAlias(address contact, string memory name) public {}
-
     function sendMessage(
         address receiver,
         string memory messageReceiver,

@@ -11,6 +11,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
+// import Channel from "./HelperComponents/Channel/Channel";
 
 function App() {
   return (
@@ -18,13 +19,15 @@ function App() {
       <NotificationProvider>
         <Router>
           <Navbar />
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Sidebar />}>
-              <Route path="chat" element={<Chatbox />}></Route>
-            </Route>
-          </Routes>
-        </div>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<Sidebar />}>
+                {/* <Route  path="chat" element={<Chatbox />}>
+                <Route path=":channelId" element={<Channel />} /> */}
+                <Route path="chat/:userId" element={<Chatbox />}></Route>
+              </Route>
+            </Routes>
+          </div>
         </Router>
       </NotificationProvider>
     </MoralisProvider>
